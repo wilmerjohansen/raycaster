@@ -1,17 +1,29 @@
 #pragma once 
 
+#include <iostream>
+#include <stdexcept>
+#include <vector>
+
 #include "window.hpp"
 
-namespace wind {
-	class App {
+namespace rayc
+{
 
-	public:
-		static constexpr int WIDTH = 800;
-		static constexpr int HEIGHT = 600;
+class App 
+{
 
-		void run();
+public:
+	static constexpr int WIDTH = 800;
+	static constexpr int HEIGHT = 600;
 
-	private:
-		REWindow reWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
-	};
+	void run();
+
+	void InitVulkan();
+	void Cleanup();
+	void CreateInstance();
+
+private:
+	REWindow reWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
+	VkInstance _instance;
+};
 }

@@ -5,21 +5,22 @@
 
 #include <string>
 
-namespace wind {
-	class REWindow {
-		public:
-			REWindow(int w, int h, std::string name);
-			~REWindow();
+namespace rayc 
+{
+class REWindow 
+{
+public:
+	REWindow(int w, int h, std::string name);
 
-			bool shouldClose() { return glfwWindowShouldClose(window);}
+	bool shouldClose() { return glfwWindowShouldClose(_window);}
+	GLFWwindow* _window;
 
-		private:
-			void initWindow();
+private:
+	void initWindow();
 
-			const int width;
-			const int height;
+	const int width;
+	const int height;
 
-			std::string windowName;
-			GLFWwindow *window;
-	};
+	std::string windowName;
+};
 }

@@ -10,9 +10,10 @@
 #include <stdexcept>
 
 int main() {
-	wind::App app{};
+	rayc::App app{};
 
 	try {
+		app.CreateInstance();
 		app.run();
 	} catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
